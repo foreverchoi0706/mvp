@@ -1,0 +1,10 @@
+.venv/
+ckpt/
+hf/
+out/
+zscaler.pem
+java-truststore.p12
+__pycache__/
+
+# Downloaded COCO evaluation dataset (recreated using README instructions)
+coco/

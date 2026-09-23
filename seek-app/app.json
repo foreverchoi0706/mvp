@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "SEEK",
+    "slug": "seek-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.seek.mvp"
+    },
+    "android": {
+      "package": "com.seek.mvp",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildArchs": ["arm64-v8a"],
+            "enableProguardInReleaseBuilds": true,
+            "extraProguardRules": "-keep class ai.onnxruntime.** { *; }\n-keep class com.google.mlkit.** { *; }"
+          }
+        }
+      ],
+      "onnxruntime-react-native",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "테스트용: 저장된 사진으로 점수를 확인합니다."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "주변을 촬영해 비밀 단어의 단서를 찾습니다. 사진은 서버로 전송하지 않습니다.",
+          "recordAudioAndroid": false
+        }
+      ]
+    ]
+  }
+}
